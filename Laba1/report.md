@@ -5,7 +5,7 @@ Year: 2022/2023
 Group: K4111c  
 Author: Mashkov Konstantin Dmitrievich  
 Lab: Lab1  
-Date of create: 21.10.2022  
+Date of create: 20.03.2023  
 Date of finished: -
 
 # Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
