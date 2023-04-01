@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-new-deployment
+  labels:
+    app: application-4
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: application-4
+  template:
+    metadata:
+      labels:
+        app: application-4
+    spec:
+      containers:
+        - name: application-4
+          image: ifilyaninitmo/itdt-contained-frontend:master
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_USERNAME
+              value: Kostya Mash
+            - name: REACT_APP_COMPANY_NAME
+              value: ITMO
