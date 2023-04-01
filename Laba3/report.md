@@ -26,11 +26,13 @@ Date of finished: -
 
  
 Перехожу в нужную папку и запускаю configmap
+`create -f configmap.yaml`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229293760-3a811ba1-e0e8-48fa-874f-e24bfa7acd96.png)
 
  
 Проверяю
+`kubectl get configmaps`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229293764-974ec00c-f62b-4ade-8c5d-76be0280a2e3.png)
 
@@ -44,6 +46,7 @@ Date of finished: -
  
 Что-то не так
 
+
 ![изображение](https://user-images.githubusercontent.com/90138874/229293780-6d2a1033-c49c-4c4a-9ed5-5fb6448a0113.png)
 
  
@@ -53,6 +56,8 @@ Date of finished: -
 
  
 Вместо configmap надо было написать configMapKeyRef
+
+`kubectl create -f replicaset.yaml`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229293796-6db1fc94-6296-4b61-b9da-b8b09b4b7efc.png)
 
@@ -74,12 +79,17 @@ Date of finished: -
 
  
 Создаю сервис
+`kubectl create -f service.yaml`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229293824-25cfd07a-1dcd-4432-b630-75ab48f804ea.png)
 
  
 Генерация TLS
 Установил OpenSSL, генерирую и подписываю ключ:
+
+`openssl genrsa -out lab3.key 2048`
+
+`openssl req -key lab3.key -new -out lab3.csr`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229293832-a0db2a95-488c-4d73-9fca-74796c383af2.png)
 
