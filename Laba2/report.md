@@ -20,15 +20,18 @@ Date of finished: -
 ## Ход работы
 
 Запускаю minicube
+`minicube start`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229292834-1cb10a6f-e33d-4161-ae22-75f743b77eb4.png)
  
 Скачиваю имейдж нужного контейнера:
+`docker pull ifilyaninitmo/itdt-contained-frontend:master`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229292846-5230d702-d5dc-49e9-b5f8-6785a214e9a3.png)
 
  
 Проверяем
+`docker image ls`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229292851-9f8b85a8-cb07-4fcf-9d2d-9c46f7581eac.png)
 
@@ -46,6 +49,7 @@ Date of finished: -
  
 Прочитал статью https://habr.com/ru/company/southbridge/blog/358824/
 Создаю сервис через yaml файл
+ `kubectl create -f service.yaml`
  
  ![изображение](https://user-images.githubusercontent.com/90138874/229292896-39ab5f5d-b798-42d5-b4fe-ac612fc10a2b.png)
 
@@ -53,16 +57,20 @@ Date of finished: -
 
  
 Проверяем
+`cubectl get pods`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229292908-12dc2424-18c9-45be-8d92-bfd561813ea5.png)
 
  
 Пробрасываю порт контейнера
+`minikube kubectl -- port-forward service/my-nodeport-service 3000:30100`
 
 ![изображение](https://user-images.githubusercontent.com/90138874/229292920-11c77b9d-b00e-424f-8f7e-5c70623c367c.png)
 
  
 Я каким-то образом стёр лишнюю строчку в файле сервиса (исправление: добавляю строчку и заново создаю сервис)
+
+`minikube kubectl -- port-forward service/my-nodeport-service 3000:3000`
  
  ![изображение](https://user-images.githubusercontent.com/90138874/229292934-0fc17cb8-d944-472c-ae12-10782e891e98.png)
 
@@ -75,6 +83,12 @@ Date of finished: -
 
  
 Смотрю логи
+
+ `minikube kubectl get pods`
+
+`minikube kubectl -- logs pod/lab2-5d8b858b44-bq5n`
+`minikube kubectl -- logs pod/lqb2-5d8b858b44-k6vj4`
+
  
  ![изображение](https://user-images.githubusercontent.com/90138874/229292961-3e3dc63a-ffae-4ff1-9a72-ed26b76beccc.png)
 
