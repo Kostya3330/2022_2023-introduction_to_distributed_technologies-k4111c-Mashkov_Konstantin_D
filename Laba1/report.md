@@ -1,5 +1,6 @@
 1. Запускаем minicube
- 
+ ![изображение](https://user-images.githubusercontent.com/90138874/229286956-fb26f480-8ccf-4afc-9434-aa98d2a3d8ff.png)
+
 2. Для взаимодействия с k8c вводим:
  
 3. Проверяем, запустился ли узел:
